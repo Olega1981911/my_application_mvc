@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
@@ -26,11 +27,7 @@ public class UserController {
         return "index";
     }
 
-    @GetMapping("/{id}")
-    public String show(@PathVariable("id") long id, Model model) {
-        model.addAttribute("user", userServices.findOne(id));
-        return "/ ";
-    }
+
 
     @GetMapping("/new")
     public String newPerson(@ModelAttribute("users") User user) {
@@ -62,7 +59,7 @@ public class UserController {
         return "redirect:/ ";
     }
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") long id) {
+    public String delete(@PathVariable("id") Long id) {
         userServices.deleteUser(id);
         return "redirect:/ ";
     }

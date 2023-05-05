@@ -38,9 +38,11 @@
 
         </td>
         <td>
-            <form th:method="DELETE" th:action="@{/{id}(id=${user.getId()})}" >
-                <input type="submit" th:value="delete"/>
+            <form th:method="DELETE" th:action="@{/{id}(id=${user.getId()})}" th:object="${user}">
+                <input type="hidden" name="id" th:value="${user.getId()}">
+                <button type="submit">delete</button>
             </form>
+
         </td>
 
     </tr>
