@@ -10,7 +10,6 @@ import javax.validation.constraints.Size;
 @Table(name = "users")
 public class User {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @NotEmpty(message = "Name should not be empty")
@@ -20,7 +19,7 @@ public class User {
     @Min(value = 0, message = "Age should be greater than 0")
     @Column(name = "age")
     private int age;
-    @Column(name = "email")
+
     @NotEmpty(message = "Email should not be empty")
     @Email
     private String email;

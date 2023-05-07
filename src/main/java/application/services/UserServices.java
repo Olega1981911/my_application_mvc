@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 @Transactional(readOnly = true)
-public class UserServices {
+public class UserServices implements ServiceUsers{
     private final UserRepository userRepository;
 
 
@@ -21,28 +21,30 @@ public class UserServices {
         this.userRepository = userRepository;
     }
 
+    @Override
     public List<User> findAll() {
         return userRepository.findAll();
     }
 
+    @Override
     public User findOne(long id) {
-        Optional<User> found = userRepository.findById(id);
-        return found.orElse(null);
+        return userRepository.findOne(id);
     }
 
+    @Override
     @Transactional
     public void saveUser(User user) {
-        userRepository.save(user);
+        userRepository.saveUser(user);
     }
 
+    @Override
     @Transactional
     public void update(long id, User updateUser) {
-        updateUser.setId(id);
-        userRepository.save(updateUser);
+        userRepository.update(id,updateUser);
     }
 
-    @Transactional
+    @Override
     public void deleteUser(long id) {
-       userRepository.deleteById(id);
+        userRepository.deleteUser(id);
     }
 }
