@@ -37,6 +37,7 @@ public class MySpringMvcDispatch extends AbstractAnnotationConfigDispatcherServl
     public void onStartup(ServletContext servletContext) throws ServletException {
         super.onStartup(servletContext);
         registerHiddenFieldFilter(servletContext);
+        registerCharacterEncodingFilter(servletContext);
     }
 
     private void registerCharacterEncodingFilter(ServletContext aContext) {

@@ -10,7 +10,7 @@
   <packaging>war</packaging>
 
   <name>my_application_mvc Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
+
   <url>http://www.example.com</url>
 
   <properties>
@@ -140,15 +140,5 @@
         </plugin>
       </plugins>
     </pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-            <source>17</source>
-            <target>17</target>
-          </configuration>
-        </plugin>
-      </plugins>
   </build>
 </project>
