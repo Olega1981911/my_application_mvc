@@ -1,0 +1,8 @@
+application\controllers\UserController.class
+application\repositories\UserRepositoryImp.class
+application\services\ServiceUsers.class
+application\config\MySpringMvcDispatch.class
+application\services\ServiceUsersImp.class
+application\models\User.class
+application\config\WebConfig.class
+application\repositories\UserRepository.class
