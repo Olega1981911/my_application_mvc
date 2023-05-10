@@ -19,7 +19,7 @@ public class User {
     @Min(value = 0, message = "Age should be greater than 0")
     @Column(name = "age")
     private int age;
-
+    @Column(name = "email")
     @NotEmpty(message = "Email should not be empty")
     @Email
     private String email;

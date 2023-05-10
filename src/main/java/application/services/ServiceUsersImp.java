@@ -12,12 +12,12 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
-public class UserServices implements ServiceUsers{
+public class ServiceUsersImp implements ServiceUsers{
     private final UserRepository userRepository;
 
 
     @Autowired
-    public UserServices(UserRepository userRepository) {
+    public ServiceUsersImp(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
